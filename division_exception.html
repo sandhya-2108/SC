@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exception Handling Example</title>
+</head>
+<body>
+
+    <h2>Exception Handling</h2>
+
+    <label>Enter Numerator:</label>
+    <input type="number" id="num1"><br><br>
+
+    <label>Enter Denominator:</label>
+    <input type="number" id="num2"><br><br>
+
+    <button onclick="divide()">Divide</button>
+
+    <p id="result"></p>
+
+    <script>
+        function divide() {
+            let a = Number(document.getElementById("num1").value);
+            let b = Number(document.getElementById("num2").value);
+            let output = document.getElementById("result");
+
+            try {
+                if (b === 0) {
+                    throw "Error: Division by zero is not allowed";
+                }
+                let result = a / b;
+                output.innerHTML = "Result: " + result;
+            }
+            catch (error) {
+                output.innerHTML = error;
+            }
+            finally {
+                console.log("Division operation completed");
+            }
+        }
+    </script>
+
+</body>
+</html>
